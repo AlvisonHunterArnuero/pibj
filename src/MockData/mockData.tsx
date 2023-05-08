@@ -1,3 +1,4 @@
+import { IdentificationIcon } from '../components/IdentificationIcon';
 import { TableData } from './Types';
 const tblMockData: TableData[] = [
 	{
@@ -113,21 +114,12 @@ const tblHeaders = [
 		),
 	},
 	{
-		header: 'Bautizado',
-		accessorKey: 'baptized',
-		cell: ({ row }: TCellProps) => (
-			<span className=" m-0 justify-center align-middle">
-				{row.renderValue('baptized') ? '✅' : '🛑'}
-			</span>
-		),
-	},
-	{
 		header: 'Detalles',
 		accessorKey: '',
 		cell: ({ row }: TCellProps) => (
 			<span className="font-semibold text-primary-900">
-				<button onClick={() => {alert("INFORMATION ON: "+row.renderValue('fullName'))}}>
-					...
+				<button className="text-center" onClick={() => {alert("INFORMATION ON: "+row.renderValue('fullName'))}}>
+					<IdentificationIcon />
 				</button>
 			</span>
 		),

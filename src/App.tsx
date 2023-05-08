@@ -5,12 +5,13 @@ import { ColumnDef } from '@tanstack/react-table';
 import { TableData } from './MockData/Types';
 import { tblHeaders } from './MockData/mockData';
 import { PaginatedTable } from './components/Table';
+import { Header } from './components/Header';
 
 function App() {
 	const [data, setData] = useState([]);
 	const query = `
 	{
-		memberPibjCollection {
+		membresiaPibjCollection {
 			items {
 				fullName
 				birthDate
@@ -51,12 +52,13 @@ function App() {
 					console.error(errors);
 				}
 				console.log('DATA FROM FETCH: ', data);
-				setData(data.memberPibjCollection.items);
+				setData(data.membresiaPibjCollection.items);
 			});
 	}, [query]);
 	const columns = React.useMemo<ColumnDef<TableData>[]>(() => tblHeaders, []);
 	return (
 		<>
+		<Header />
 			{data && (
 				<PaginatedTable
 					{...{
