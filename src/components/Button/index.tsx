@@ -1,5 +1,3 @@
-import { AddIcon } from '../AddIcon';
-
 export type DarkButtonProps = {
 	btnTextContent: string;
 };
