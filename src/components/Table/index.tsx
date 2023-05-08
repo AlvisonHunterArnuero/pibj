@@ -116,14 +116,14 @@ export function PaginatedTable({
 									{'>>'}
 								</button>
 								<span className="flex items-center gap-1">
-									<div>Page</div>
+									<div>Pagina</div>
 									<strong>
-										{table.getState().pagination.pageIndex + 1} of{' '}
+										{table.getState().pagination.pageIndex + 1} de{' '}
 										{table.getPageCount()}
 									</strong>
 								</span>
 								<span className="flex items-center gap-1">
-									| Go to page:
+									| Ir a Pagina:
 									<input
 										type="number"
 										defaultValue={table.getState().pagination.pageIndex + 1}
@@ -145,7 +145,7 @@ export function PaginatedTable({
 								>
 									{[5, 10, 20, 30, 40, 50].map((pageSize) => (
 										<option key={pageSize} value={pageSize}>
-											Show {pageSize}
+											Mostrar {pageSize}
 										</option>
 									))}
 								</select>
