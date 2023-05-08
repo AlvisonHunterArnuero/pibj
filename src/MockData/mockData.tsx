@@ -48,7 +48,7 @@ export type TCellProps = {
 };
 const tblHeaders = [
 	{
-		header: 'Nombre',
+		header: 'Nombre Completo',
 		accessorKey: 'fullName',
 		cell: ({ row }: TCellProps) => {
 			return (
@@ -59,23 +59,23 @@ const tblHeaders = [
 		},
 	},
 	{
-		header: 'Direccion',
+		header: 'Direccion Actual',
 		accessorKey: 'address',
 		cell: ({ row }: TCellProps) => {
 			return (
-				<span className="font-semibold text-primary-900">
+				<span className="font-normal text-primary-900">
 					{row.renderValue('address')}
 				</span>
 			);
 		},
 	},
 	{
-		header: 'Genero',
+		header: 'Sexo',
 		accessorKey: 'gender',
 		cell: ({ row }: TCellProps) => {
 			return (
-				<span className="font-semibold text-primary-900">
-					{row.renderValue('gender') === 'Masculino' ? '👨' : '👩'}
+				<span className="font-bold">
+					{row.renderValue('gender') === 'Masculino' ? 'M' : 'F'}
 				</span>
 			);
 		},
@@ -85,7 +85,7 @@ const tblHeaders = [
 		accessorKey: 'department',
 		cell: ({ row }: TCellProps) => {
 			return (
-				<span className="font-semibold text-primary-900">
+				<span className="font-normal text-primary-900">
 					{row.renderValue('department')}
 				</span>
 			);
@@ -96,7 +96,7 @@ const tblHeaders = [
 		accessorKey: 'phone',
 		cell: ({ row }: TCellProps) => {
 			return (
-				<span className="font-semibold text-primary-900">
+				<span className="font-normal text-primary-900">
 					{row.renderValue('phone')}
 				</span>
 			);
@@ -105,20 +105,21 @@ const tblHeaders = [
 	{
 		header: 'Detalles',
 		accessorKey: '',
-		cell: ({ row }: TCellProps) => (
-			<span className="font-semibold text-primary-900">
-				<button
-					data-modal-target="popup-modal"
-					data-modal-toggle="popup-modal"
-					className="text-center"
-					onClick={() => {
-						alert('INFORMATION ON: ' + row.renderValue('fullName'));
-					}}
-				>
-					<IdentificationIcon />
-				</button>
-			</span>
-		),
+		cell: ({ row }: TCellProps) => {
+			return (
+				<span className="font-normal text-primary-900">
+					<button
+						type="button"
+						className="text-center"
+						onClick={() => {
+							console.log('INFORMATION ON: ' + row.renderValue('fullName'));
+						}}
+					>
+						<IdentificationIcon />
+					</button>
+				</span>
+			);
+		},
 	},
 ];
 export { tblMockData, tblHeaders };

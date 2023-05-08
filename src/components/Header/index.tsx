@@ -4,7 +4,7 @@ import logo from '../../assets/pibjColored.png';
 
 export function Header() {
 	return (
-		<div className="flex flex-row align-middle bg-slate-100 header-bg-img">
+		<div className="my-2 flex flex-row align-middle bg-slate-200 header-bg-img border rounded-lg">
 			<div className="basis-1/4 m-auto">
 				<ImageContainer imageName={logo} />
 			</div>
