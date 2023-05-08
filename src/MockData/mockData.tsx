@@ -112,7 +112,7 @@ const tblHeaders = [
 						type="button"
 						className="text-center"
 						onClick={() => {
-							console.log('INFORMATION ON: ' + row.renderValue('fullName'));
+							alert('Pronto Detalles de: ' + row.renderValue('fullName'));
 						}}
 					>
 						<IdentificationIcon />

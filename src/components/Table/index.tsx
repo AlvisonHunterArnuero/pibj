@@ -83,7 +83,7 @@ export function PaginatedTable({
 								</tbody>
 							</table>
 							<div className="flex flex-row justify-between gap-3 text-center font-normal">
-								<div className="inline-flex justify-center gap-4 min-w-full bg-gray-700">
+								<div className="inline-flex justify-center gap-4 min-w-full bg-gray-800 rounded-lg border">
 									<button
 										className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
 										onClick={() => table.setPageIndex(0)}
@@ -98,14 +98,14 @@ export function PaginatedTable({
 									>
 										{'<'}
 									</button>
-									<span className="flex items-center gap-1 px-3 py-2 bg-gray-800 text-white">
+									<span className="flex items-center gap-1 px-3 py-2 text-white">
 										<div>Pagina</div>
 										<strong>
 											{table.getState().pagination.pageIndex + 1} de{' '}
 											{table.getPageCount()}
 										</strong>
 									</span>
-									<span className="flex items-center gap-1 px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+									<span className="flex items-center gap-1 px-3 py-2 text-white">
 										| Ir a Pagina:
 										<input
 											type="number"
@@ -116,11 +116,11 @@ export function PaginatedTable({
 													: 0;
 												table.setPageIndex(page);
 											}}
-											className="border p-1 rounded w-16"
+											className="bg-gray-900 border p-1 rounded w-16"
 										/>
 									</span>
 									<select
-										className="font-normal px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+										className="font-normal px-3 py-2 bg-gray-900 text-white"
 										value={table.getState().pagination.pageSize}
 										onChange={(e) => {
 											table.setPageSize(Number(e.target.value));
