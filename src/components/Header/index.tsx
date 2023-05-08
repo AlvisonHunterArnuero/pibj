@@ -9,9 +9,7 @@ export function Header() {
 				<ImageContainer imageName={logo} />
 			</div>
 			<div className="basis-2/4 m-auto">
-				<h2 className="text-blue-900 text-4xl">
-					ChurchHub - Membership PIBJ
-				</h2>
+				<h2 className="text-blue-900 text-4xl">ChurchHub</h2>
 			</div>
 			<div className="basis-1/6 m-auto float-right">
 				<Button btnTextContent="About ChurchHub" />
