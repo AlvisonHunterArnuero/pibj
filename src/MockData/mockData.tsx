@@ -111,9 +111,9 @@ const tblHeaders = [
 					data-modal-target="popup-modal"
 					data-modal-toggle="popup-modal"
 					className="text-center"
-					// onClick={() => {
-					// 	alert('INFORMATION ON: ' + row.renderValue('fullName'));
-					// }}
+					onClick={() => {
+						alert('INFORMATION ON: ' + row.renderValue('fullName'));
+					}}
 				>
 					<IdentificationIcon />
 				</button>
