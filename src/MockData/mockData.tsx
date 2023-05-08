@@ -75,7 +75,7 @@ const tblHeaders = [
 		cell: ({ row }: TCellProps) => {
 			return (
 				<span className="font-semibold text-primary-900">
-					{row.renderValue('gender') === 'Male' ? '👨' : '👩'}
+					{row.renderValue('gender') === 'Masculino' ? '👨' : '👩'}
 				</span>
 			);
 		},

@@ -4,7 +4,7 @@ import logo from '../../assets/pibjColored.png';
 
 export function Header() {
 	return (
-		<div className="flex flex-row align-middle bg-slate-100">
+		<div className="flex flex-row align-middle bg-slate-100 header-bg-img">
 			<div className="basis-1/4 m-auto">
 				<ImageContainer imageName={logo} />
 			</div>
@@ -14,7 +14,7 @@ export function Header() {
 				</h2>
 			</div>
 			<div className="basis-1/6 m-auto float-right">
-				<Button btnTextContent="Add Member" />
+				<Button btnTextContent="About ChurchHub" />
 			</div>
 		</div>
 	);
