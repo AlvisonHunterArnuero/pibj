@@ -7,6 +7,7 @@ import {
 	flexRender,
 } from '@tanstack/react-table';
 import { TableData } from '../../MockData/Types';
+import { Modal } from '../Modal';
 
 export function PaginatedTable({
 	data,
@@ -25,8 +26,8 @@ export function PaginatedTable({
 	if (!data) {
 		return <h1>"Loading..."</h1>;
 	}
-	return (
-		<div className="flex flex-col overflow-x-auto">
+	return (<>
+			<div className="flex flex-col overflow-x-auto">
 			<div className="sm:-mx-6 lg:-mx-8">
 				<div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
 					<div className="overflow-x-auto">
@@ -154,5 +155,8 @@ export function PaginatedTable({
 				</div>
 			</div>
 		</div>
+		<Modal />
+	</>
+
 	);
 }

@@ -103,22 +103,18 @@ const tblHeaders = [
 		},
 	},
 	{
-		header: 'Estado civil',
-		accessorKey: 'maritalStatus',
-		cell: ({ row }: TCellProps) => (
-			<div className="flex items-center justify-center">
-				<div className="flex-1 text-base font-semibold">
-					{row.renderValue('maritalStatus')}
-				</div>
-			</div>
-		),
-	},
-	{
 		header: 'Detalles',
 		accessorKey: '',
 		cell: ({ row }: TCellProps) => (
 			<span className="font-semibold text-primary-900">
-				<button className="text-center" onClick={() => {alert("INFORMATION ON: "+row.renderValue('fullName'))}}>
+				<button
+					data-modal-target="popup-modal"
+					data-modal-toggle="popup-modal"
+					className="text-center"
+					// onClick={() => {
+					// 	alert('INFORMATION ON: ' + row.renderValue('fullName'));
+					// }}
+				>
 					<IdentificationIcon />
 				</button>
 			</span>
