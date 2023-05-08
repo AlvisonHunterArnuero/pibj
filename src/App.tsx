@@ -51,14 +51,13 @@ function App() {
 				if (errors) {
 					console.error(errors);
 				}
-				console.log('DATA FROM FETCH: ', data);
 				setData(data.membresiaPibjCollection.items);
 			});
 	}, [query]);
 	const columns = React.useMemo<ColumnDef<TableData>[]>(() => tblHeaders, []);
 	return (
 		<>
-		<Header />
+			<Header />
 			{data && (
 				<PaginatedTable
 					{...{
