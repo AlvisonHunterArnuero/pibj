@@ -1,4 +1,6 @@
 import {
+	Column,
+	Table as ReactTable,
 	useReactTable,
 	getCoreRowModel,
 	getFilteredRowModel,
@@ -7,6 +9,31 @@ import {
 	flexRender,
 } from '@tanstack/react-table';
 import { TableData } from '../../MockData/Types';
+
+
+	// data: TableData[];
+	// columns: ColumnDef<TableData>[];
+function Filter({
+	column,
+}: {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	column: Column<any, any>;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	table: ReactTable<any>;
+}) {
+	const columnFilterValue = column.getFilterValue();
+	return (
+		<div className="flex space-x-2">
+			<input
+				type="text"
+				value={(columnFilterValue ?? '') as string}
+				onChange={(e) => column.setFilterValue(e.target.value)}
+				placeholder={`Buscar...`}
+				className="w-full border-none text-black text-center p-2 h-8"
+			/>
+		</div>
+	);
+}
 
 export function PaginatedTable({
 	data,
@@ -31,24 +58,34 @@ export function PaginatedTable({
 				<div className="sm:-mx-6 lg:-mx-8">
 					<div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
 						<div className="overflow-x-auto">
-							<table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+							<table className="w-full border bg-neutral-200 text-gray-500 dark:text-gray-400">
 								<thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
 									{table.getHeaderGroups().map((headerGroup) => (
-										<tr className="divide-x" key={headerGroup.id}>
+										<tr className="text-gray-900" key={headerGroup.id}>
 											{headerGroup.headers.map((header) => {
 												return (
 													<th
 														scope="row"
-														className="px-6 py-4 font-medium text-gray-900 bg-gray-900 whitespace-nowrap dark:text-white"
+														className="font-medium bg-gray-900 whitespace-nowrap dark:text-white"
 														key={header.id}
 														colSpan={header.colSpan}
 													>
 														{header.isPlaceholder ? null : (
-															<div>
-																{flexRender(
-																	header.column.columnDef.header,
-																	header.getContext()
-																)}
+															<div className="flex flex-col items-center justify-center">
+																<div className='w-full p-3 text-center m-auto'>
+																	{flexRender(
+																		header.column.columnDef.header,
+																		header.getContext()
+																	)}
+																</div>
+																{header.column.getCanFilter() ? (
+																	<div className="bg-white w-full m-0">
+																		<Filter
+																			column={header.column}
+																			table={table}
+																		/>
+																	</div>
+																) : null}
 															</div>
 														)}
 													</th>
@@ -67,7 +104,7 @@ export function PaginatedTable({
 												{row.getVisibleCells().map((cell) => {
 													return (
 														<td
-															className="whitespace-nowrap p-1 text-center"
+															className="whitespace-nowrap text-sm font-light py-1 text-left px-4"
 															key={cell.id}
 														>
 															{flexRender(
