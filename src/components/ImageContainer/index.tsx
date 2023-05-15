@@ -4,7 +4,7 @@ export type TImageContainerProps = {
 export function ImageContainer({ imageName = '' }: TImageContainerProps) {
 	return (
 		<img
-			className="h-auto max-w-full"
+			className="h-auto w-60"
 			src={imageName}
 			alt="image description"
 		/>

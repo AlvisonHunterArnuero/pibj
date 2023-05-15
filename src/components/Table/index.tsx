@@ -9,10 +9,6 @@ import {
 	flexRender,
 } from '@tanstack/react-table';
 import { TableData } from '../../MockData/Types';
-
-
-	// data: TableData[];
-	// columns: ColumnDef<TableData>[];
 function Filter({
 	column,
 }: {
