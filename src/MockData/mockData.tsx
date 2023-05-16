@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { IdentificationIcon } from '../components/IdentificationIcon';
 import { TableData } from './Types';
 const tblMockData: TableData[] = [
@@ -39,8 +40,21 @@ const tblMockData: TableData[] = [
 	},
 ];
 
+export type OriginalProps = {
+	fullName: string;
+	birthDate: string;
+	address: string;
+	gender: string;
+	department: string;
+	phone: string;
+	maritalStatus: string;
+	baptized: boolean;
+	memberSince: string;
+	churchRole: string;
+};
 export type TRowProps = {
 	renderValue: (rowArg: string) => string;
+	original?: OriginalProps;
 };
 
 export type TCellProps = {
@@ -106,16 +120,15 @@ const tblHeaders = [
 		header: 'Detalles',
 		accessorKey: '',
 		cell: ({ row }: TCellProps) => {
+			const { original } = row;
 			return (
 				<span className="font-normal text-primary-900">
-					<button
-						type="button"
-						className="text-center"
-						onClick={() => {
-							alert('Pronto Detalles de: ' + row.renderValue('fullName'));
-						}}
-					>
-						<IdentificationIcon />
+					<button type="button" className="text-center">
+						<Link
+							to={`details/${original?.fullName}|${original?.birthDate}|${original?.address}|${original?.gender}|${original?.department}|${original?.phone}|${original?.maritalStatus}|${original?.baptized}|${original?.memberSince}|${original?.churchRole}`}
+						>
+							<IdentificationIcon />
+						</Link>
 					</button>
 				</span>
 			);
