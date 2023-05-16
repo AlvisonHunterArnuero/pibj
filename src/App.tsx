@@ -6,6 +6,7 @@ import { TableData } from './MockData/Types';
 import { tblHeaders } from './MockData/mockData';
 import { PaginatedTable } from './components/Table';
 import { Header } from './components/Header';
+import { SearchBox } from './components/SearchBox';
 
 function App() {
 	const [data, setData] = useState([]);
@@ -60,6 +61,7 @@ function App() {
 	return (
 		<>
 			<Header />
+			<SearchBox />
 			{data && (
 				<PaginatedTable
 					{...{

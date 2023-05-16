@@ -4,7 +4,6 @@ import female from '../../assets/female.png';
 export function MemberDetails() {
 	const { memberId } = useParams();
 	const location = useLocation();
-	console.log(location.state);
 	return (
 		<>
 			{' '}

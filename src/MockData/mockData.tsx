@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom';
 import { IdentificationIcon } from '../components/IdentificationIcon';
-import { TableData } from './Types';
+import { OriginalProps, TableData } from './Types';
+import { CellContext } from '@tanstack/react-table';
+import {
+	JSXElementConstructor,
+	ReactElement,
+	ReactFragment,
+	ReactNode,
+	ReactPortal,
+} from 'react';
 const tblMockData: TableData[] = [
 	{
 		fullName: 'Jorge Luis Ortiz Solano',
@@ -40,20 +48,6 @@ const tblMockData: TableData[] = [
 	},
 ];
 
-export type OriginalProps = {
-	fullName: string;
-	birthDate: string;
-	address: string;
-	gender: string;
-	city: string;
-	department: string;
-	phone: string;
-	maritalStatus: string;
-	baptized: boolean;
-	memberSince: string;
-	churchRole: string;
-	mentor: string;
-};
 export type TRowProps = {
 	renderValue: (rowArg: string) => string;
 	original?: OriginalProps;
