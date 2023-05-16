@@ -45,12 +45,14 @@ export type OriginalProps = {
 	birthDate: string;
 	address: string;
 	gender: string;
+	city: string;
 	department: string;
 	phone: string;
 	maritalStatus: string;
 	baptized: boolean;
 	memberSince: string;
 	churchRole: string;
+	mentor: string;
 };
 export type TRowProps = {
 	renderValue: (rowArg: string) => string;
@@ -125,7 +127,21 @@ const tblHeaders = [
 				<span className="font-normal text-primary-900">
 					<button type="button" className="text-center">
 						<Link
-							to={`details/${original?.fullName}|${original?.birthDate}|${original?.address}|${original?.gender}|${original?.department}|${original?.phone}|${original?.maritalStatus}|${original?.baptized}|${original?.memberSince}|${original?.churchRole}`}
+							to={`details/${row.renderValue('fullName')}`}
+							state={{
+								fullName: original?.fullName,
+								birthDate: original?.birthDate,
+								address: original?.address,
+								gender: original?.gender,
+								city: original?.city,
+								department: original?.department,
+								phone: original?.phone,
+								maritalStatus: original?.maritalStatus,
+								baptized: original?.baptized,
+								memberSince: original?.memberSince,
+								churchRole: original?.churchRole,
+								mentor: original?.mentor,
+							}}
 						>
 							<IdentificationIcon />
 						</Link>

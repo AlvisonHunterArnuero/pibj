@@ -17,12 +17,14 @@ function App() {
 				birthDate
 				address
 				gender
+				city
 				department
 				phone
 				maritalStatus
 				baptized
 				memberSince
 				churchRole
+				mentor
 			}
 		}
 	}
