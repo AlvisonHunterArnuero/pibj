@@ -1,3 +1,4 @@
+import React from 'react';
 import {
 	Column,
 	Table as ReactTable,
@@ -68,7 +69,7 @@ export function PaginatedTable({
 													>
 														{header.isPlaceholder ? null : (
 															<div className="flex flex-col items-center justify-center">
-																<div className='w-full p-3 text-center m-auto'>
+																<div className="w-full p-3 text-center m-auto">
 																	{flexRender(
 																		header.column.columnDef.header,
 																		header.getContext()
