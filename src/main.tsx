@@ -5,6 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import { MemberDetails } from './components/MemberDetails/index.tsx';
+import { Team } from './components/Team/index.tsx';
 
 const router = createBrowserRouter([
 	{
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
 	{
 		path: 'details/:memberId',
 		element: <MemberDetails />,
+	},
+	{
+		path: 'team',
+		element: <Team />,
 	},
 ]);
 

@@ -36,8 +36,8 @@ export function MemberDetails() {
 										)}{' '}
 								años
 							</span>
-							<div className="flex mt-4 space-x-3 md:mt-6 w-full !text-blue-400">
-								<span className="text-sm dark:!text-sky-500">
+							<div className="flex mt-4 items-center justify-center space-x-3 md:mt-6 w-full !text-blue-400">
+								<span className="text-sm text-center dark:!text-sky-500">
 									Direccion:
 									<span className="text-neutral-400 font-light">
 										{location?.state.address}
@@ -46,10 +46,12 @@ export function MemberDetails() {
 									</span>
 								</span>
 							</div>
-							<div className="flex mt-4 space-x-3 md:mt-6">
+							<div className="flex mt-4 items-center justify-center space-x-3 md:mt-6">
 								<span className="text-sm !text-sky-500 dark:text-gray-400">
 									Telefono:{' '}
-									<span className="text-neutral-400">{location?.state.phone}</span>
+									<span className="text-neutral-400">
+										{location?.state.phone}
+									</span>
 								</span>
 								<span className="text-sm !text-sky-500 dark:text-gray-400">
 									Estado Civil:{' '}
@@ -58,7 +60,7 @@ export function MemberDetails() {
 									</span>
 								</span>
 							</div>
-							<div className="flex mt-4 space-x-3 md:mt-6">
+							<div className="flex mt-4 items-center justify-center space-x-3 md:mt-6">
 								<span className="text-sm !text-sky-500 dark:text-gray-400">
 									Bautizado:{' '}
 									<span className="text-neutral-400">
@@ -72,7 +74,7 @@ export function MemberDetails() {
 									</span>
 								</span>
 							</div>
-							<div className="flex mt-4 space-x-3 md:mt-6">
+							<div className="flex mt-4 items-center justify-center space-x-3 md:mt-6">
 								<span className="text-sm !text-sky-500 dark:text-gray-400">
 									Mentor:{' '}
 									<span className="text-neutral-400">
@@ -86,12 +88,14 @@ export function MemberDetails() {
 					</div>
 				)}
 			</div>
-			<div className="text-white bg-sky-800 w-full md:w-5/12 lg:w-5/12 m-auto my-4 p-3 rounded-lg">
-				<Link to={'/'}>Menu Principal</Link>
+			<div className="flex flex-row items-center justify-between my-6 gap-2">
+				<span className="text-white m-auto p-4 rounded-lg max-w-full basis-3/6 bg-black hover:bg-gray-100 hover:text-black">
+					<Link to={'/'}>Menu Principal</Link>
+				</span>
+				<span className="text-white m-auto p-4 rounded-lg max-w-full basis-3/6 bg-gray-600 hover:bg-gray-900">
+					<Link to={'/team'}>Equipo Ministerial</Link>
+				</span>
 			</div>
 		</>
 	);
 }
-
-// birthDate: string;
-// memberSince: string;
