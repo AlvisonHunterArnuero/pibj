@@ -111,13 +111,13 @@ const tblHeaders = [
 		},
 	},
 	{
-		header: 'Detalles',
+		header: 'Mas Info',
 		accessorKey: '',
 		cell: ({ row }: TCellProps) => {
 			const { original } = row;
 			return (
-				<span className="font-normal text-primary-900">
-					<button type="button" className="text-center">
+				<span className="flex justify-center items-center">
+					<button type="button" className="text-center h-8">
 						<Link
 							to={`details/${row.renderValue('fullName')}`}
 							state={{

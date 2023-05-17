@@ -54,7 +54,7 @@ export function PaginatedTable({
 				<div className="sm:-mx-6 lg:-mx-8">
 					<div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
 						<div className="overflow-x-auto">
-							<table className="w-full border bg-neutral-200 text-gray-500 dark:text-gray-400">
+							<table className="w-full border bg-sky-100 text-gray-500 dark:text-gray-400">
 								<thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
 									{table.getHeaderGroups().map((headerGroup) => (
 										<tr className="text-gray-900" key={headerGroup.id}>
@@ -81,7 +81,7 @@ export function PaginatedTable({
 																			table={table}
 																		/>
 																	</div>
-																) : null}
+																) : <input disabled className='h-8 bg-neutral-100' />}
 															</div>
 														)}
 													</th>
